@@ -3,8 +3,8 @@ const config = require('../config');
 const threadUtils = require("../threadUtils");
 
 module.exports = bot => {
+  console.log('hi');
   const addInboxServerCommand = (...args) => threadUtils.addInboxServerCommand(bot, ...args);
-
   addInboxServerCommand('ping', async (msg, args, thread) => {
     // if (! thread) return;
     let time = Date.now();

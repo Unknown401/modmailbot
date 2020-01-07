@@ -11,7 +11,7 @@ module.exports = (bot, sse) => {
     if (! thread) return;
 
     const text = args.join(' ').trim();
-    let isAnonymous = false;
+    let isAnonymous = true;
 
     if (config.replyAnonDefault === true) {
       isAnonymous = true;
@@ -30,7 +30,7 @@ module.exports = (bot, sse) => {
 
     const text = args.join(' ').trim();
     if (msg.attachments.length) await attachments.saveAttachmentsInMessage(msg);
-    await thread.replyToUser(msg.member, text, msg.attachments, true, sse);
+    await thread.replyToUser(msg.member, text, msg.attachments, false, sse);
     msg.delete();
   });
 

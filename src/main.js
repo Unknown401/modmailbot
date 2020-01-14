@@ -173,7 +173,8 @@ bot.on('messageCreate', async msg => {
 
       sse.send({ thread }, 'threadOpen')
     }
-
+    console.log('DEBUG')
+    console.log(thread)
     await thread.receiveUserReply(msg, sse);
   });
 });
